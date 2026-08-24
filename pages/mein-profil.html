@@ -7,8 +7,9 @@
     <meta name="theme-color" content="#15141f" media="(prefers-color-scheme: dark)" data-scheme="dark">
     <script>(function(){var t=localStorage.getItem('theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}var lm=document.querySelector('meta[data-scheme="light"]'),dm=document.querySelector('meta[data-scheme="dark"]');if(t==='dark'){lm.media='not all';dm.media='all';}else if(t==='light'){lm.media='all';dm.media='not all';}})();</script>
 
-    <title>Swan Calisthenics | Rechtliches</title>
-    <meta author="Nicolas Brand">
+    <title>Swan Calisthenics | Mein Profil</title>
+    <meta name="description" content="Eigenes Mitgliederprofil bearbeiten.">
+    <meta name="author" content="Nicolas Brand">
 
     <link rel="icon" type="image/png" href="../assets/favicon/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg">
@@ -18,9 +19,8 @@
 
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/components.css">
-    <link rel="stylesheet" href="../css/pages/rechtliches.css">
 </head>
-<body data-page="rechtliches">
+<body data-page="mein-profil">
 
 <div class="aurora-blob coral"></div>
 <div class="aurora-blob violet"></div>
@@ -53,48 +53,77 @@
 </header>
 
 <main>
-    <section class="section legal-section">
-        <h2 class="section-title">Rechtliche <span class="accent">Informationen</span></h2>
+    <section class="section">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Startseite</a>
+            <span aria-hidden="true">&rsaquo;</span>
+            <a href="mitglieder.html">Mitglieder</a>
+        </nav>
+        <h2 class="section-title">Mein <span class="accent">Profil</span></h2>
+        <p class="section-lead">
+            Eigene Angaben bearbeiten.
+            <span class="badge badge-pending">Platzhalter-Daten</span>
+        </p>
 
-        <div class="glass-card legal-card">
-            <h1>Impressum</h1>
-            <p>
-                <strong>Swan Calisthenics Community</strong><br>
-                Käpfnerweg 18<br>
-                8810 Horgen<br>
-                E-Mail: <a href="mailto:alessandro.keller@gmx.ch">alessandro.keller@gmx.ch</a>
-            </p>
-            <p><em>Vertretungsberechtigte Personen:</em> Alessandro Fabian Keller (Communitygründer)</p>
+        <div class="profile-layout">
+        <div class="glass-card profile-form-card">
+            <div class="person-img-placeholder" aria-hidden="true">M</div>
+            <form id="profileForm" onsubmit="return handleProfileSubmit(event)">
+                <div class="field">
+                    <label for="profileName">Name</label>
+                    <input type="text" id="profileName" name="name" value="Max Mustermann" required>
+                </div>
+                <div class="field">
+                    <label for="profileEmail">E-Mail</label>
+                    <input type="email" id="profileEmail" name="email" value="max.mustermann@example.com" required>
+                </div>
+                <label class="toggle">
+                    <input type="checkbox" id="profileEmailShare">
+                    <span class="toggle-track"><span class="toggle-thumb"></span></span>
+                    <span class="toggle-label">E-Mail mit anderen teilen</span>
+                </label>
+                <p class="form-hint">Instagram und TikTok sind für andere Mitglieder sichtbar.</p>
+                <div class="field">
+                    <label for="profileInstagram">Instagram-Link</label>
+                    <input type="url" id="profileInstagram" name="instagram" value="https://www.instagram.com/maxmustermann">
+                </div>
+                <div class="field">
+                    <label for="profileTiktok">TikTok-Link</label>
+                    <input type="url" id="profileTiktok" name="tiktok" value="https://www.tiktok.com/@maxmustermann">
+                </div>
+                <p id="profileNotice" hidden>Speichern ist noch nicht aktiv – folgt in einem der nächsten Schritte.</p>
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-primary">Speichern</button>
+                </div>
+            </form>
+        </div>
 
-            <hr>
-
-            <h1>Datenschutzerklärung</h1>
-
-            <h2>1. Verantwortliche Stelle</h2>
-            <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist der oben im Impressum genannte Community.</p>
-
-            <h2>2. Hosting (Datenübertragung)</h2>
-            <p>Wenn Sie unsere Website aufrufen, stellt Ihr Browser eine Verbindung zum Hosting-Server her. Dabei werden automatisch Protokolldaten (sogenannte Server-Logfiles) erhoben. Dazu gehören:</p>
-            <ul>
-                <li>IP-Adresse des zugreifenden Geräts</li>
-                <li>Datum und Uhrzeit des Abrufs</li>
-                <li>Übertragene Datenmenge und Name der abgerufenen Datei</li>
-                <li>Browsertyp und Version sowie das Betriebssystem Ihres Geräts</li>
-                <li>Referrer-URL (die zuvor besuchte Seite)</li>
-            </ul>
-            <p>Zweck dieser Verarbeitung ist die sichere, stabile und fehlerfreie Bereitstellung unserer Vereinswebsite. Die Datenverarbeitung steht im Einklang mit dem Schweizer Datenschutzgesetz (DSG).</p>
-
-            <h2>3. Cookies, Tracking und Registrierung</h2>
-            <p>Diese Website dient ausschliesslich der Information über unsere Community. Wir betreiben kein Backend, nutzen keine Cookies und verwenden keine Webanalyse- oder Tracking-Tools (wie Google Analytics). Es gibt keine Registrierungs- oder Login-Formulare. Es werden von uns keine personenbezogenen Daten aktiv abgefragt oder gespeichert, mit Ausnahme der freiwilligen Angaben im Kontaktformular.</p>
-            <p>Auf unserer Website veröffentlichen wir Bildmaterial von Communityaktivitäten und den Communitygründern. Dies geschieht auf Grundlage des berechtigten Interesses der Community an der Öffentlichkeitsarbeit sowie mit dem Einverständnis der abgebildeten Personen. Sollten Sie mit der Veröffentlichung eines Bildes, auf dem Sie erkennbar sind, nicht einverstanden sein, genügt eine kurze Mitteilung an die oben genannte E-Mail-Adresse, und wir werden das Bild umgehend entfernen.</p>
-            <p>Die Verweise auf soziale Netzwerke (z. B. Instagram, WhatsApp) sind als rein statische Verlinkungen ausgestaltet. Das bedeutet: Beim reinen Besuch unserer Website werden keinerlei Daten an diese externen Plattformen übertragen. Erst wenn Sie aktiv auf einen solchen Link klicken, verlassen Sie unsere Website und werden auf die Plattform des jeweiligen Anbieters weitergeleitet. Ab diesem Zeitpunkt gelten die Datenschutzbestimmungen der jeweiligen Plattform.</p>
-
-            <h2>4. Ihre Rechte</h2>
-            <p>Sie haben nach dem Schweizer Datenschutzgesetz das Recht auf unentgeltliche Auskunft über Ihre verarbeiteten Daten sowie ein Recht auf Berichtigung oder Löschung, soweit dem keine gesetzlichen Aufbewahrungspflichten entgegenstehen. Bei Fragen dazu können Sie uns jederzeit über die oben genannte E-Mail-Adresse kontaktieren.</p>
-
-            <div class="legal-back-btn">
-                <a href="../index.html" class="btn btn-secondary">&larr; Zur Startseite</a>
-            </div>
+        <details class="glass-card profile-form-card password-details">
+            <summary>
+                Passwort ändern
+                <span class="details-chevron" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+            </summary>
+            <form id="passwordForm" onsubmit="return handlePasswordSubmit(event)">
+                <div class="field">
+                    <label for="oldPassword">Aktuelles Passwort</label>
+                    <input type="password" id="oldPassword" required autocomplete="current-password">
+                </div>
+                <div class="field">
+                    <label for="newPassword">Neues Passwort</label>
+                    <input type="password" id="newPassword" required autocomplete="new-password">
+                </div>
+                <div class="field">
+                    <label for="newPasswordConfirm">Neues Passwort bestätigen</label>
+                    <input type="password" id="newPasswordConfirm" required autocomplete="new-password">
+                </div>
+                <p id="passwordNotice" hidden></p>
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-primary">Passwort ändern</button>
+                </div>
+            </form>
+        </details>
         </div>
     </section>
 </main>

@@ -1,1 +1,1 @@
-Die seite ist über diesen Link erreichbar: https://n-brand.github.io/new-swan-design/ 
+Dieses Repo ist umgezogen. Aktive Entwicklung läuft jetzt unter https://github.com/swancalisthenics/dev, erreichbar unter https://swancalisthenics.github.io/dev/
